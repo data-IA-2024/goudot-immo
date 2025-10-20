@@ -6,3 +6,10 @@ stages:
     - pipe1.py
     outs:
     - data/ValeursFoncieres-2025-S1.txt.csv
+  pipe2:
+    cmd: python pipe1.py data/ValeursFoncieres-2024.txt
+    deps:
+    - data/ValeursFoncieres-2024.txt
+    - pipe1.py
+    outs:
+    - data/ValeursFoncieres-2024.txt.csv

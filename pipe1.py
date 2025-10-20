@@ -4,6 +4,7 @@ import numpy as np
 
 '''
 lecture des txt et écriture csv
+garde que les ventes
 '''
 
 fn=sys.argv[1] # "data/ValeursFoncieres-2025-S1.txt"
@@ -20,7 +21,6 @@ df.fillna(0.0, inplace=True) # remplis avec zéro
 df.drop_duplicates(subset=['date', 'no_voie', 'type_voie', 'voie', 'cp'], keep=False, inplace=True)
 df['surface_total']=df.surface1+df.surface2+df.surface3+df.surface4+df.surface5
 df['prixm2']=df.valeur/df.surface_total
-
 
 print(df)
 print(df.dtypes)
