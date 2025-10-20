@@ -1,0 +1,8 @@
+stages:
+  pipe1:
+    cmd: python pipe1.py data/ValeursFoncieres-2025-S1.txt
+    deps:
+    - data/ValeursFoncieres-2025-S1.txt
+    - pipe1.py
+    outs:
+    - data/ValeursFoncieres-2025-S1.txt.csv
