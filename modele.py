@@ -12,7 +12,7 @@ import mlflow, mlflow.sklearn
 
 fns=glob.glob('data/ValeursFoncieres*.csv')
 
-dept = '31'
+dept = '75'
 
 print(fns)
 dfs=[pd.read_csv(fn) for fn in fns]
@@ -89,4 +89,11 @@ with mlflow.start_run() as run:
     mlflow.log_metric("r2_score", r2)  # Enregistre le score R²
     print(f"{r2=:.3f}")
 
-    mlflow.sklearn.log_model(model, "model")
+    input_example = pd.DataFrame({
+        "local": ['Maison', 'Appartement'],
+        "pieces": [4, 2],
+        "terrain": [100, 0],
+        "surface_total": [100, 50],
+    })
+
+    mlflow.sklearn.log_model(model, "model", input_example=input_example)

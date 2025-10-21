@@ -3,16 +3,17 @@ import pandas as pd
 
 mlflow.set_tracking_uri(uri='http://localhost:5000')
 
-logged_model = 'runs:/b383e867adba4fac8a4fcb68ac7b8583/model'
+logged_model = 'runs:/04d1b9985ba34c1ab9fa0c750ab6312d/model'
 
 # Load model as a PyFuncModel.
 loaded_model = mlflow.pyfunc.load_model(logged_model)
 
-# Predict on a Pandas DataFrame.
-#data=[[ 'Maison',     4.0,      0.0,          83.72]]
-df=pd.read_csv("data/ValeursAll.csv")
-features="local,pieces,terrain,surface_total".split(',') # ,prixm2
-X = df[features]
+data = pd.DataFrame({
+    "local": ['Maison', 'Appartement'],
+    "pieces": [4, 2],
+    "terrain": [100, 0],
+    "surface_total": [100, 50],
+})
 
-y = loaded_model.predict(X)
+y = loaded_model.predict(data)
 print(y)
