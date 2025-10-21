@@ -13,6 +13,12 @@ G4 : Arnaud, Fabien
  pip install -r requirements.txt
 ```
 
+# Appli Web
+```bash
+ source venv/bin/activate
+ fastapi dev main.py
+```
+
 
 # VM
 créer instance

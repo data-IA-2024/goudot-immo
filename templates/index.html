@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de bien immobilier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h1>Estimation de bien immobilier</h1>
+<form action="/predict" method="post">
+    <div class="form-group">
+        <label for="local">Type de local :</label>
+        <select id="local" name="local" required>
+            <option value="">-- Sélectionnez un type --</option>
+            <option value="Maison">Maison</option>
+            <option value="Appartement">Appartement</option>
+            <option value="Dépendance">Dépendance</option>
+            <option value="Local industriel, commercial ou assimilé">Local industriel, commercial ou assimilé</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="pieces">Nombre de pièces :</label>
+        <input type="number" id="pieces" name="pieces" min="1" required>
+    </div>
+
+    <div class="form-group">
+        <label for="terrain">Surface du terrain (m²) :</label>
+        <input type="number" id="terrain" name="terrain" min="0">
+    </div>
+
+    <div class="form-group">
+        <label for="surface_total">Surface totale (m²) :</label>
+        <input type="number" id="surface_total" name="surface_total" min="1" required>
+    </div>
+
+    <button type="submit">Envoyer</button>
+</form>
+</body>
+</html>
