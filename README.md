@@ -3,7 +3,7 @@ démo projet Immobilier
 
 G1 : Promise, Patricia
 G2 : Dylan, Jonathan, Steve
-G3 : Cyril, Melody (jusqu'à son absence de demain), Maximilien
+G3 : Cyril, Melody, Maximilien
 G4 : Arnaud, Fabien
 
 # Instalation
