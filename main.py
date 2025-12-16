@@ -19,6 +19,9 @@ model=None
 def read_root(request: Request):
     return templates.TemplateResponse(request=request, name="index.html", context={"name": "Appli ML"})
 
+@app.get("/health")
+def get_health(request: Request):
+    return "OK"
 
 @app.post("/predict")
 def read_item(request: Request, local: Annotated[str, Form()], pieces:Annotated[int, Form()], terrain:Annotated[int, Form()], surface_total:Annotated[int, Form()], insee:Annotated[str, Form()]):
