@@ -11,4 +11,4 @@ EXPOSE 8888
 
 HEALTHCHECK --interval=1m --timeout=5s --retries=3 CMD curl --silent --fail http://localhost:8000/health || exit 1
 
-CMD [ "fastapi","run" ]
+CMD [ "fastapi", "run", "app/main.py" ]
