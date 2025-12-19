@@ -1,0 +1,13 @@
+dvc
+pandas
+scikit-learn
+mlflow
+
+typing_extensions
+fastapi[standard]
+evidently
+
+joblib
+
+prometheus-fastapi-instrumentator
+prometheus-client
