@@ -2,7 +2,7 @@ from typing import Union
 from typing_extensions import Annotated
 from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
-import mlflow
+import mlflow, os
 import pandas as pd
 from prometheus_fastapi_instrumentator import Instrumentator
 
