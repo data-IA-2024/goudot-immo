@@ -6,7 +6,10 @@ import mlflow
 import pandas as pd
 from prometheus_fastapi_instrumentator import Instrumentator
 
-mlflow.set_tracking_uri(uri='http://localhost:5000')
+mlflow.set_tracking_uri(uri=os.getenv('MLFLOW_URI')) # 'http://localhost:5000'
+mlflow.set_experiment(f"goudot-p4-test")
+with mlflow.start_run() as run:
+    mlflow.log_params({"essai": "OK"})
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
