@@ -380,9 +380,7 @@ plotly==5.24.1
 polyfactory==2.22.5
     # via litestar
 prometheus-client==0.21.1
-    # via
-    #   -r requirements.in
-    #   prometheus-fastapi-instrumentator
+    # via prometheus-fastapi-instrumentator
 prometheus-fastapi-instrumentator==7.1.0
     # via -r requirements.in
 prompt-toolkit==3.0.52

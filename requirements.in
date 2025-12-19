@@ -10,4 +10,3 @@ evidently
 joblib
 
 prometheus-fastapi-instrumentator
-prometheus-client
