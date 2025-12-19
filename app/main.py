@@ -4,7 +4,7 @@ from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
 import mlflow, os
 import pandas as pd
-from prometheus_fastapi_instrumentator import Instrumentator
+#from prometheus_fastapi_instrumentator import Instrumentator
 
 mlflow.set_tracking_uri(uri=os.getenv('MLFLOW_URI')) # 'http://localhost:5000'
 mlflow.set_experiment(f"goudot-p4-test")
@@ -14,7 +14,7 @@ with mlflow.start_run() as run:
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
-Instrumentator().instrument(app).expose(app, include_in_schema=False) # expose /metrics
+#Instrumentator().instrument(app).expose(app, include_in_schema=False) # expose /metrics
 
 model=None
 
