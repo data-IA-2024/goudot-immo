@@ -18,9 +18,30 @@ HugginFace, model meta-llama/Meta-Llama-3-8B-Instruct
  pip install flake8 black
 ```
 
-## run test
+## run démo
 ```bash
  python runIA.py
+```
+
+## Clean code
+```bash
+ flake8 runIA.py # check syntax warning
+```
+
+```bash
+ black runIA.py # reformat code !
+```
+
+## Configuration avec DeepSeek & LangSmith(Eu)
+Fichier `.env`:
+```text
+DEEPSEEK_API_KEY=sk-************************
+
+LANGSMITH_TRACING=true
+LANGSMITH_ENDPOINT=https://eu.api.smith.langchain.com
+LANGSMITH_API_KEY=lsv2_pt_******************************
+LANGSMITH_PROJECT="GRETA-P4"
+
 ```
 
 //----------------------------------------------------------------------------------------------
